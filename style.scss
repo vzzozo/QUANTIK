@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+:root {
+    --green: #8ad930;
+    --red: #d93030;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+}
+
+.dragging {
+    opacity: .5;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #eee;
+    background-color: #222;
+
+    h1 {
+        text-align: center;
+        font-size: 5rem;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        z-index: 2147483647;
+    }
+
+    .menu {
+        position: relative;
+        height: 100vh;
+        color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .menuBtns {
+            display: grid;
+
+            .btn {
+                text-align: center;
+                width: 28.125rem;
+                height: 7rem;
+                font-size: 2rem;
+                font-weight: bold;
+                font-family: 'Press Start 2P', sans-serif;
+                border: none;
+                background: #fff;
+                cursor: pointer;
+            }
+
+            .btn:nth-child(1) {
+                margin-bottom: 25px;
+            }
+
+            .btn:hover {
+                background-color: rgb(146, 146, 146);
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .szabalySection {
+        display: none;
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        color: #eee;
+        align-items: center;
+        justify-content: space-around;
+
+        .jatekLeiras {
+            width: 50rem;
+            height: 50rem;
+            margin: 15px;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+            font-size: 12px;
+            line-height: 25px;
+        }
+
+        .backToMenu {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 20.125rem;
+            height: 5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Press Start 2P', sans-serif;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(146, 146, 146);
+        }
+    }
+
+    .jatekKezdese {
+        display: none;
+        position: relative;
+        top: -100px;
+        height: 100vh;
+        color: #eee;
+        align-items: center;
+        justify-content: space-around;
+
+        .container {
+            display: inline-flex;
+
+            .left,
+            .right {
+                text-align: center;
+                display: grid;
+                margin: 5px;
+
+                span {
+                    font-size: 25PX;
+                    margin-bottom: 15px;
+
+                    .eee {
+                        color: var(--green);
+                    }
+
+                    .kkk {
+                        color: var(--red);
+                    }
+                }
+
+                input {
+                    height: 35px;
+                    font-size: 25px;
+                }
+            }
+
+            .right {
+                margin-left: 15px;
+            }
+
+            .left {
+                margin-right: 15px;
+            }
+        }
+
+        .startBtn,
+        .backToMenu2 {
+            position: absolute;
+            top: 57%;
+            text-align: center;
+            width: 20.125rem;
+            height: 5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Press Start 2P', sans-serif;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(146, 146, 146);
+        }
+
+        .backToMenu2 {
+            top: 65%;
+        }
+    }
+
+    .jatekFelulet {
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        color: #eee;
+        align-items: center;
+        justify-content: space-around;
+
+
+        .egyesJatekosCsikiCsukiBabuHider,
+        .kettesJatekosCsikiCsukiBabuHider {
+            position: absolute;
+            top: 45px;
+            z-index: 10;
+            width: 300px;
+            height: 600px;
+        }
+
+        .egyesJatekosContainer,
+        .kettesJatekosContainer {
+            position: relative;
+            height: 200px;
+            top: -125px;
+            text-align: center;
+
+            span {
+                font-size: 20px;
+            }
+
+            .egyesJatekosNeveS,
+            .kettesJatekosNeveS {
+                position: absolute;
+                top: -10%;
+                left: 50%;
+                font-size: 20px;
+                line-height: 25px;
+                transform: translate(-50%, -50%);
+            }
+
+            .egyesJatekosNeveS {
+                color: var(--green)
+            }
+
+            .kettesJatekosNeveS {
+                color: var(--red)
+            }
+
+            .babuk {
+                position: relative;
+                top: 20px;
+
+                .babu {
+                    width: 120px;
+                    height: 120px;
+                    margin: 5px;
+                }
+            }
+
+            .egyesJatekosBabui,
+            .kettesJatekosBabui {
+                display: flex;
+                cursor: pointer;
+            }
+
+            .EndTurnBtn {
+                position: absolute;
+                top: 100%;
+                width: 115px;
+                height: 115px;
+                border: 1.5px solid black;
+                background-color: rgb(146, 146, 146);
+                border-radius: 50%;
+                font-weight: bold;
+                text-align: center;
+                font-family: 'Press Start 2P', sans-serif;
+                letter-spacing: 2px;
+                line-height: 15px;
+                cursor: pointer;
+            }
+
+            .EndTurnBtn:hover {
+                background-color: rgb(95, 95, 95);
+            }
+        }
+
+        .tablaContainer {
+            position: relative;
+            top: 40px;
+            width: 550px;
+            height: 560px;
+
+            span {
+                position: absolute;
+                top: -5%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 1.5rem;
+                line-height: 45px;
+            }
+
+            .nextPlayerName {
+                font-size: 2.5rem;
+            }
+
+            @keyframes blink {
+                50% {
+                    opacity: 0;
+                }
+
+                80% {
+                    opacity: .5;
+                }
+            }
+
+            .winnerPlayer {
+                font-size: 3rem;
+                animation: blink 1s linear infinite;
+            }
+
+            .tablaMezok {
+                background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(150, 71, 25, 1) 50%, rgba(250, 250, 250, 1) 100%);
+
+                td {
+                    border: 5px solid rgb(0, 0, 0);
+                    text-align: center;
+                    width: 137.5px;
+                    height: 137.5px;
+                    cursor: pointer;
+                }
+
+                .tabla {
+                    z-index: 1;
+
+                    .mezo {
+                        background-repeat: no-repeat;
+                        background-size: 100px 100px;
+                    }
+
+                    .data11,
+                    .data12,
+                    .data21,
+                    .data22,
+                    .data33,
+                    .data34,
+                    .data43,
+                    .data44 {
+                        background-color: #797979;
+                    }
+
+                    .data13,
+                    .data14,
+                    .data23,
+                    .data24,
+                    .data31,
+                    .data32,
+                    .data41,
+                    .data42 {
+                        background-color: #c2ba64;
+                    }
+
+
+                    .active {
+                        background-position: center;
+                    }
+                }
+            }
+        }
+
+        .tablaMezoHider {
+            position: absolute;
+            top: 54.2%;
+            left: 50%;
+            width: 550px;
+            height: 560px;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+
+            .rows {
+                display: flex;
+                width: 550px;
+                height: 141px;
+
+                .mezoHider {
+                    border: 5px solid rgba(233, 31, 31, 0);
+                    width: 138.5px;
+                    height: 137.5px;
+                }
+
+            }
+
+            .row1 {
+                margin-top: 1px;
+                margin-left: 2px;
+            }
+
+            .row2 {
+                margin-top: -1px;
+                margin-left: 2px;
+            }
+
+            .row3 {
+                margin-top: -1px;
+                margin-left: 2px;
+            }
+
+            .row4 {
+                margin-top: -2px;
+                margin-left: 2px;
+            }
+
+        }
+
+        .retToMenu {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 90%;
+            left: 50%;
+            text-align: center;
+            width: 28.125rem;
+            height: 7rem;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Press Start 2P', sans-serif;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .retToMenu:hover {
+            background-color: rgb(146, 146, 146);
+            background-image: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1725px) {
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    body {
+        .jatekFelulet {
+
+            .egyesJatekosCsikiCsukiBabuHider,
+            .kettesJatekosCsikiCsukiBabuHider {
+                position: absolute;
+                top: 0;
+                z-index: 10;
+                width: 200px;
+                height: 400px;
+            }
+
+            .egyesJatekosContainer,
+            .kettesJatekosContainer {
+                .babuk {
+                    position: relative;
+                    top: 10px;
+
+                    .babu {
+                        width: 100px;
+                        height: 100px;
+                        margin: 5px;
+                    }
+                }
+
+                .EndTurnBtn {
+                    position: absolute;
+                    top: 240%;
+                    width: 115px;
+                    height: 115px;
+                    border-radius: 50%;
+                    font-weight: bold;
+                    text-align: center;
+                    font-family: 'Press Start 2P', sans-serif;
+                    cursor: pointer;
+                }
+
+                .kettesJatekosEndTurnBtn {
+                    right: 50px;
+                }
+
+                .egyesJatekosEndTurnBtn {
+                    left: 50px;
+                }
+            }
+
+            .retToMenu {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 8%;
+                left: 90%;
+                font-size: 1.5rem;
+                text-align: center;
+                width: 15.125rem;
+                height: 5rem;
+            }
+
+            .retToMenu:hover {
+                background-color: rgb(146, 146, 146);
+                background-image: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    img {
+        width: 80px;
+        height: 80px;
+    }
+
+    body {
+
+        h1 {
+            font-size: 3rem;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .jatekFelulet {
+
+            .egyesJatekosCsikiCsukiBabuHider,
+            .kettesJatekosCsikiCsukiBabuHider {
+                position: absolute;
+                top: 0;
+                z-index: 10;
+                width: 200px;
+                height: 400px;
+            }
+
+            .egyesJatekosContainer,
+            .kettesJatekosContainer {
+                position: relative;
+                height: 200px;
+                top: -125px;
+                text-align: center;
+
+                span {
+                    font-size: 20px;
+                }
+
+                .babuk {
+                    position: relative;
+                    top: 10px;
+
+                    .babu {
+                        width: 80px;
+                        height: 80px;
+                        margin: 5px;
+                    }
+                }
+
+                .EndTurnBtn {
+                    position: absolute;
+                    top: 200%;
+                    width: 115px;
+                    height: 115px;
+                    border-radius: 50%;
+                    font-weight: bold;
+                    text-align: center;
+                    font-family: 'Press Start 2P', sans-serif;
+                    cursor: pointer;
+                }
+
+                .kettesJatekosEndTurnBtn {
+                    right: 40px;
+                }
+
+                .egyesJatekosEndTurnBtn {
+                    left: 40px;
+                }
+            }
+        }
+
+        .tablaContainer {
+            position: relative;
+            top: -30px;
+            width: 410px;
+            height: 420px;
+
+            .tablaMezok {
+                background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(150, 71, 25, 1) 50%, rgba(250, 250, 250, 1) 100%);
+            }
+
+            .nextPlayerName {
+                font-size: 2.5rem;
+            }
+
+            td {
+                border: 5px solid rgb(0, 0, 0);
+                text-align: center;
+                width: 137.5px;
+                height: 137.5px;
+                cursor: pointer;
+            }
+
+            .tabla {
+                .mezo {
+                    background-repeat: no-repeat;
+                    background-size: 75px 75px;
+                }
+
+                .active {
+                    background-position: center;
+                }
+            }
+        }
+
+        .retToMenu {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 90%;
+            left: 50%;
+            text-align: center;
+            width: 28.125rem;
+            height: 9rem;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Press Start 2P', sans-serif;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .retToMenu:hover {
+            background-color: rgb(146, 146, 146);
+            background-image: none;
+        }
+
+        .mezoHider {
+            position: relative;
+            top: 8px;
+            left: -2px;
+        }
+    }
+}

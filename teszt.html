@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>QUANTIK</h1>
+    <section class="menu">
+        <div class="menuBtns">
+            <button class="btn szabalyok">Játékszabály</button>
+            <button class="btn jatekosNevek">Játék kezdése</button>
+        </div>
+    </section>
+    <section class="szabalySection">
+        <p class="jatekLeiras">
+            A játék egy 4x4-es táblán játszódik, ami 4 egyenlő, 2x2-es részre van bontva. A játékhoz négy, egymástól
+            könnyen megkülönböztethető, alakzatot használhatunk, jelen esetben négyzetet, kört, háromszöget és
+            hatszöget-et.
+            Mind a két játékosnak minden alakzatból 2-2 bábuja van, így összesen 8 alakzat található meg egy színből.
+            A játék célja az, hogy elsőként helyezzék le a játékosok a negyedik, többitől különböző formát egy sorba,
+            oszlopba, vagy négyzet alakú területre (színtől függetlenül).
+            Mivel a színek nem számítanak, nyerhetünk csupán úgy is, hogy mind a három másik alakzatot a másik játékos
+            tette le, mi pedig a negyedik bábut helyeztük le.
+        </p>
+        <button class="btn backToMenu">Vissza</button>
+    </section>
+    <section class="jatekKezdese">
+
+        <div class="container">
+
+            <div class="left">
+                <span><span class="eee">1-es</span>játékos</span>
+                <input type="text" id="egyesJatekos" required>
+            </div>
+
+            <div class="right">
+                <span><span class="kkk">2-es</span>játékos</span>
+                <input type="text" id="kettesJatekos" required>
+            </div>
+        </div>
+
+        <button class="btn startBtn">START</button>
+        <button class="btn backToMenu2">Vissza</button>
+    </section>
+    <section class="jatekFelulet">
+        <div class="egyesJatekosContainer">
+            <span><span class="egyesJatekosNeveS">
+                </span>bábui</span>
+            <div class="egyesJatekosCsikiCsukiBabuHider"></div>
+            <div class="egyesJatekosBabui babuk">
+                <div class="egyesJatekosBabuiElsoSor">
+                    <div class="babu dragContainer negyzet">
+                        <img src="imgs/GR.png" id="1" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zndb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer harmoszog">
+                        <img src="imgs/GT.png" id="2" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zhdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer kor">
+                        <img src="imgs/GC.png" id="3" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zkdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer iksz">
+                        <img src="imgs/GX.png" id="4" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zidb">2</span>-->
+                    </div>
+                </div>
+                <div class="egyesJatekosBabuiMasodikSor">
+                    <div class="babu dragContainer negyzet">
+                        <img src="imgs/GR.png" id="1" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zndb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer harmoszog">
+                        <img src="imgs/GT.png" id="2" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zhdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer kor">
+                        <img src="imgs/GC.png" id="3" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zkdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer iksz">
+                        <img src="imgs/GX.png" id="4" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk zidb">2</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tablaContainer">
+            <span><span class="nextPlayerName"></span>következik</span>
+            <span><span class="winnerPlayer"></span>győzött!!</span>
+            <div class="tablaMezok">
+                <table class="tabla">
+                    <tr class="row1">
+                        <td class="data11 mezo dragabbleTd"></td>
+                        <td class="data12 mezo dragabbleTd"></td>
+                        <td class="data13 mezo dragabbleTd"></td>
+                        <td class="data14 mezo dragabbleTd"></td>
+                    </tr>
+                    <tr class="row2">
+                        <td class="data21 mezo dragabbleTd"></td>
+                        <td class="data22 mezo dragabbleTd"></td>
+                        <td class="data23 mezo dragabbleTd"></td>
+                        <td class="data24 mezo dragabbleTd"></td>
+                    </tr>
+                    <tr class="row3">
+                        <td class="data31 mezo dragabbleTd"></td>
+                        <td class="data32 mezo dragabbleTd"></td>
+                        <td class="data33 mezo dragabbleTd"></td>
+                        <td class="data34 mezo dragabbleTd"></td>
+                    </tr>
+                    <tr class="row4">
+                        <td class="data41 mezo dragabbleTd"></td>
+                        <td class="data42 mezo dragabbleTd"></td>
+                        <td class="data43 mezo dragabbleTd"></td>
+                        <td class="data44 mezo dragabbleTd"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="tablaMezoHider">
+            <div class="rows row1">
+                <div class="mezoHider m1"></div>
+                <div class="mezoHider m2"></div>
+                <div class="mezoHider m3"></div>
+                <div class="mezoHider m4"></div>
+            </div>
+
+            <div class="rows row2">
+                <div class="mezoHider m5"></div>
+                <div class="mezoHider m6"></div>
+                <div class="mezoHider m7"></div>
+                <div class="mezoHider m8"></div>
+
+            </div>
+            <div class="rows row3">
+                <div class="mezoHider m9"></div>
+                <div class="mezoHider m10"></div>
+                <div class="mezoHider m11"></div>
+                <div class="mezoHider m12"></div>
+            </div>
+
+            <div class="rows row4">
+                <div class="mezoHider m13"></div>
+                <div class="mezoHider m14"></div>
+                <div class="mezoHider m15"></div>
+                <div class="mezoHider m16"></div>
+            </div>
+        </div>
+        <div class="kettesJatekosContainer">
+            <span><span class="kettesJatekosNeveS">
+                </span>bábui</span>
+            <div class="kettesJatekosCsikiCsukiBabuHider "></div>
+            <div class="kettesJatekosBabui babuk">
+                <div class="kettesJatekosBabuiElsoSor">
+                    <div class="babu dragContainer negyzet">
+                        <img src="imgs/RR.png" id="1" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk pndb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer harmoszog">
+                        <img src="imgs/RT.png" id="2" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk phdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer kor">
+                        <img src="imgs/RC.png" id="3" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk pkdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer iksz">
+                        <img src="imgs/RX.png" id="4" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk pidb">2</span>-->
+                    </div>
+                </div>
+                <div class="kettesJatekosBabuiMasodikSor">
+                    <div class="babu dragContainer negyzet">
+                        <img src="imgs/RR.png" id="1" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk pndb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer harmoszog">
+                        <img src="imgs/RT.png" id="2" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk phdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer kor">
+                        <img src="imgs/RC.png" id="3" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk pkdb">2</span>-->
+                    </div>
+                    <div class="babu dragContainer iksz">
+                        <img src="imgs/RX.png" id="4" class="draggableImg" draggable="true" alt="">
+                        <!--<span class="numberOfBabuk pidb">2</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="retToMenu" onClick="window.location.reload();">Kilépés</button>
+    </section>
+</body>
+<script src="teszt.js"></script>
+
+</html>

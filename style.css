@@ -1,0 +1,655 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+:root {
+  --green: #8ad930;
+  --red: #d93030;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+}
+
+.dragging {
+  opacity: .5;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+
+body h1 {
+  text-align: center;
+  font-size: 5rem;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2147483647;
+}
+
+body .menu {
+  position: relative;
+  height: 100vh;
+  color: #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .menu .menuBtns {
+  display: -ms-grid;
+  display: grid;
+}
+
+body .menu .menuBtns .btn {
+  text-align: center;
+  width: 28.125rem;
+  height: 7rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Press Start 2P', sans-serif;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+body .menu .menuBtns .btn:nth-child(1) {
+  margin-bottom: 25px;
+}
+
+body .menu .menuBtns .btn:hover {
+  background-color: #929292;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body .szabalySection {
+  display: none;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  color: #eee;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .szabalySection .jatekLeiras {
+  width: 50rem;
+  height: 50rem;
+  margin: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: justify;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+body .szabalySection .backToMenu {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  width: 20.125rem;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Press Start 2P', sans-serif;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+body .szabalySection .btn:hover {
+  background-color: #929292;
+}
+
+body .jatekKezdese {
+  display: none;
+  position: relative;
+  top: -100px;
+  height: 100vh;
+  color: #eee;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .jatekKezdese .container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+body .jatekKezdese .container .left,
+body .jatekKezdese .container .right {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  margin: 5px;
+}
+
+body .jatekKezdese .container .left span,
+body .jatekKezdese .container .right span {
+  font-size: 25PX;
+  margin-bottom: 15px;
+}
+
+body .jatekKezdese .container .left span .eee,
+body .jatekKezdese .container .right span .eee {
+  color: var(--green);
+}
+
+body .jatekKezdese .container .left span .kkk,
+body .jatekKezdese .container .right span .kkk {
+  color: var(--red);
+}
+
+body .jatekKezdese .container .left input,
+body .jatekKezdese .container .right input {
+  height: 35px;
+  font-size: 25px;
+}
+
+body .jatekKezdese .container .right {
+  margin-left: 15px;
+}
+
+body .jatekKezdese .container .left {
+  margin-right: 15px;
+}
+
+body .jatekKezdese .startBtn,
+body .jatekKezdese .backToMenu2 {
+  position: absolute;
+  top: 57%;
+  text-align: center;
+  width: 20.125rem;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Press Start 2P', sans-serif;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+body .jatekKezdese .btn:hover {
+  background-color: #929292;
+}
+
+body .jatekKezdese .backToMenu2 {
+  top: 65%;
+}
+
+body .jatekFelulet {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  color: #eee;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .jatekFelulet .egyesJatekosCsikiCsukiBabuHider,
+body .jatekFelulet .kettesJatekosCsikiCsukiBabuHider {
+  position: absolute;
+  top: 45px;
+  z-index: 10;
+  width: 300px;
+  height: 600px;
+}
+
+body .jatekFelulet .egyesJatekosContainer,
+body .jatekFelulet .kettesJatekosContainer {
+  position: relative;
+  height: 200px;
+  top: -125px;
+  text-align: center;
+}
+
+body .jatekFelulet .egyesJatekosContainer span,
+body .jatekFelulet .kettesJatekosContainer span {
+  font-size: 20px;
+}
+
+body .jatekFelulet .egyesJatekosContainer .egyesJatekosNeveS,
+body .jatekFelulet .egyesJatekosContainer .kettesJatekosNeveS,
+body .jatekFelulet .kettesJatekosContainer .egyesJatekosNeveS,
+body .jatekFelulet .kettesJatekosContainer .kettesJatekosNeveS {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  font-size: 20px;
+  line-height: 25px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body .jatekFelulet .egyesJatekosContainer .egyesJatekosNeveS,
+body .jatekFelulet .kettesJatekosContainer .egyesJatekosNeveS {
+  color: var(--green);
+}
+
+body .jatekFelulet .egyesJatekosContainer .kettesJatekosNeveS,
+body .jatekFelulet .kettesJatekosContainer .kettesJatekosNeveS {
+  color: var(--red);
+}
+
+body .jatekFelulet .egyesJatekosContainer .babuk,
+body .jatekFelulet .kettesJatekosContainer .babuk {
+  position: relative;
+  top: 20px;
+}
+
+body .jatekFelulet .egyesJatekosContainer .babuk .babu,
+body .jatekFelulet .kettesJatekosContainer .babuk .babu {
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+}
+
+body .jatekFelulet .egyesJatekosContainer .egyesJatekosBabui,
+body .jatekFelulet .egyesJatekosContainer .kettesJatekosBabui,
+body .jatekFelulet .kettesJatekosContainer .egyesJatekosBabui,
+body .jatekFelulet .kettesJatekosContainer .kettesJatekosBabui {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+body .jatekFelulet .egyesJatekosContainer .EndTurnBtn,
+body .jatekFelulet .kettesJatekosContainer .EndTurnBtn {
+  position: absolute;
+  top: 100%;
+  width: 115px;
+  height: 115px;
+  border: 1.5px solid black;
+  background-color: #929292;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Press Start 2P', sans-serif;
+  letter-spacing: 2px;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+body .jatekFelulet .egyesJatekosContainer .EndTurnBtn:hover,
+body .jatekFelulet .kettesJatekosContainer .EndTurnBtn:hover {
+  background-color: #5f5f5f;
+}
+
+body .jatekFelulet .tablaContainer {
+  position: relative;
+  top: 40px;
+  width: 550px;
+  height: 560px;
+}
+
+body .jatekFelulet .tablaContainer span {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  line-height: 45px;
+}
+
+body .jatekFelulet .tablaContainer .nextPlayerName {
+  font-size: 2.5rem;
+}
+
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: .5;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: .5;
+  }
+}
+
+body .jatekFelulet .tablaContainer .winnerPlayer {
+  font-size: 3rem;
+  -webkit-animation: blink 1s linear infinite;
+          animation: blink 1s linear infinite;
+}
+
+body .jatekFelulet .tablaContainer .tablaMezok {
+  background: radial-gradient(circle, black 0%, #964719 50%, #fafafa 100%);
+}
+
+body .jatekFelulet .tablaContainer .tablaMezok td {
+  border: 5px solid black;
+  text-align: center;
+  width: 137.5px;
+  height: 137.5px;
+  cursor: pointer;
+}
+
+body .jatekFelulet .tablaContainer .tablaMezok .tabla {
+  z-index: 1;
+}
+
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .mezo {
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+}
+
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data11,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data12,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data21,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data22,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data33,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data34,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data43,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data44 {
+  background-color: #797979;
+}
+
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data13,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data14,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data23,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data24,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data31,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data32,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data41,
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .data42 {
+  background-color: #c2ba64;
+}
+
+body .jatekFelulet .tablaContainer .tablaMezok .tabla .active {
+  background-position: center;
+}
+
+body .jatekFelulet .tablaMezoHider {
+  position: absolute;
+  top: 54.2%;
+  left: 50%;
+  width: 550px;
+  height: 560px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+body .jatekFelulet .tablaMezoHider .rows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 550px;
+  height: 141px;
+}
+
+body .jatekFelulet .tablaMezoHider .rows .mezoHider {
+  border: 5px solid rgba(233, 31, 31, 0);
+  width: 138.5px;
+  height: 137.5px;
+}
+
+body .jatekFelulet .tablaMezoHider .row1 {
+  margin-top: 1px;
+  margin-left: 2px;
+}
+
+body .jatekFelulet .tablaMezoHider .row2 {
+  margin-top: -1px;
+  margin-left: 2px;
+}
+
+body .jatekFelulet .tablaMezoHider .row3 {
+  margin-top: -1px;
+  margin-left: 2px;
+}
+
+body .jatekFelulet .tablaMezoHider .row4 {
+  margin-top: -2px;
+  margin-left: 2px;
+}
+
+body .jatekFelulet .retToMenu {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 90%;
+  left: 50%;
+  text-align: center;
+  width: 28.125rem;
+  height: 7rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Press Start 2P', sans-serif;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+body .jatekFelulet .retToMenu:hover {
+  background-color: #929292;
+  background-image: none;
+}
+
+@media screen and (max-width: 1725px) {
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  body .jatekFelulet .egyesJatekosCsikiCsukiBabuHider,
+  body .jatekFelulet .kettesJatekosCsikiCsukiBabuHider {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 200px;
+    height: 400px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .babuk,
+  body .jatekFelulet .kettesJatekosContainer .babuk {
+    position: relative;
+    top: 10px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .babuk .babu,
+  body .jatekFelulet .kettesJatekosContainer .babuk .babu {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .EndTurnBtn,
+  body .jatekFelulet .kettesJatekosContainer .EndTurnBtn {
+    position: absolute;
+    top: 240%;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Press Start 2P', sans-serif;
+    cursor: pointer;
+  }
+  body .jatekFelulet .egyesJatekosContainer .kettesJatekosEndTurnBtn,
+  body .jatekFelulet .kettesJatekosContainer .kettesJatekosEndTurnBtn {
+    right: 50px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .egyesJatekosEndTurnBtn,
+  body .jatekFelulet .kettesJatekosContainer .egyesJatekosEndTurnBtn {
+    left: 50px;
+  }
+  body .jatekFelulet .retToMenu {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    top: 8%;
+    left: 90%;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 15.125rem;
+    height: 5rem;
+  }
+  body .jatekFelulet .retToMenu:hover {
+    background-color: #929292;
+    background-image: none;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  img {
+    width: 80px;
+    height: 80px;
+  }
+  body h1 {
+    font-size: 3rem;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  body .jatekFelulet .egyesJatekosCsikiCsukiBabuHider,
+  body .jatekFelulet .kettesJatekosCsikiCsukiBabuHider {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 200px;
+    height: 400px;
+  }
+  body .jatekFelulet .egyesJatekosContainer,
+  body .jatekFelulet .kettesJatekosContainer {
+    position: relative;
+    height: 200px;
+    top: -125px;
+    text-align: center;
+  }
+  body .jatekFelulet .egyesJatekosContainer span,
+  body .jatekFelulet .kettesJatekosContainer span {
+    font-size: 20px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .babuk,
+  body .jatekFelulet .kettesJatekosContainer .babuk {
+    position: relative;
+    top: 10px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .babuk .babu,
+  body .jatekFelulet .kettesJatekosContainer .babuk .babu {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .EndTurnBtn,
+  body .jatekFelulet .kettesJatekosContainer .EndTurnBtn {
+    position: absolute;
+    top: 200%;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Press Start 2P', sans-serif;
+    cursor: pointer;
+  }
+  body .jatekFelulet .egyesJatekosContainer .kettesJatekosEndTurnBtn,
+  body .jatekFelulet .kettesJatekosContainer .kettesJatekosEndTurnBtn {
+    right: 40px;
+  }
+  body .jatekFelulet .egyesJatekosContainer .egyesJatekosEndTurnBtn,
+  body .jatekFelulet .kettesJatekosContainer .egyesJatekosEndTurnBtn {
+    left: 40px;
+  }
+  body .tablaContainer {
+    position: relative;
+    top: -30px;
+    width: 410px;
+    height: 420px;
+  }
+  body .tablaContainer .tablaMezok {
+    background: radial-gradient(circle, black 0%, #964719 50%, #fafafa 100%);
+  }
+  body .tablaContainer .nextPlayerName {
+    font-size: 2.5rem;
+  }
+  body .tablaContainer td {
+    border: 5px solid black;
+    text-align: center;
+    width: 137.5px;
+    height: 137.5px;
+    cursor: pointer;
+  }
+  body .tablaContainer .tabla .mezo {
+    background-repeat: no-repeat;
+    background-size: 75px 75px;
+  }
+  body .tablaContainer .tabla .active {
+    background-position: center;
+  }
+  body .retToMenu {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    top: 90%;
+    left: 50%;
+    text-align: center;
+    width: 28.125rem;
+    height: 9rem;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Press Start 2P', sans-serif;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+  }
+  body .retToMenu:hover {
+    background-color: #929292;
+    background-image: none;
+  }
+  body .mezoHider {
+    position: relative;
+    top: 8px;
+    left: -2px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
